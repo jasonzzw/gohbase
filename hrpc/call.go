@@ -240,6 +240,7 @@ func deserializeCellBlocks(b []byte, cellsLen uint32) ([]*pb.Cell, uint32, error
 
 // Result holds a slice of Cells as well as miscellaneous information about the response.
 type Result struct {
+	Error   error // An indicator showing whether the underlying work goes wrong.
 	Cells   []*Cell
 	Stale   bool
 	Partial bool
